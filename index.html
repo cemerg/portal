@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Portal</title>
+    <meta
+      name="description"
+      content="A welcoming landing page for the Portal project."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand" aria-label="Portal home">
+          <span class="brand-mark">P</span>
+          <span>Portal</span>
+        </div>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="nav-button">Get started</button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Welcome aboard</p>
+            <h1>Your digital workspace, designed to feel effortless.</h1>
+            <p class="subtitle">
+              Portal brings your ideas, tasks, and collaboration into one clean,
+              focused experience built for modern teams.
+            </p>
+            <div class="cta-row">
+              <a class="primary-btn" href="#features">Explore features</a>
+              <a class="secondary-btn" href="#about">Learn more</a>
+            </div>
+            <ul class="trust-points" aria-label="Key benefits">
+              <li>Fast setup</li>
+              <li>Secure access</li>
+              <li>Built for teams</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="Portal dashboard preview">
+            <div class="dashboard-card main-card">
+              <div class="card-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="stats-grid">
+                <div class="stat-box">
+                  <span class="label">Projects</span>
+                  <strong>24</strong>
+                </div>
+                <div class="stat-box accent">
+                  <span class="label">Growth</span>
+                  <strong>+18%</strong>
+                </div>
+              </div>
+              <div class="chart-bars" aria-hidden="true">
+                <span style="height: 30%"></span>
+                <span style="height: 55%"></span>
+                <span style="height: 42%"></span>
+                <span style="height: 80%"></span>
+                <span style="height: 68%"></span>
+                <span style="height: 92%"></span>
+              </div>
+            </div>
+            <div class="floating-panel">
+              <p>Team sync</p>
+              <strong>8 updates today</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="features" id="features">
+          <div class="section-heading">
+            <p class="eyebrow">Why Portal</p>
+            <h2>Everything your team needs in one place</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="icon">⚡</div>
+              <h3>Streamlined workflows</h3>
+              <p>Automate repetitive tasks and reduce friction across daily operations.</p>
+            </article>
+            <article class="feature-card">
+              <div class="icon">🔒</div>
+              <h3>Secure by default</h3>
+              <p>Keep your workspace protected with enterprise-ready access controls.</p>
+            </article>
+            <article class="feature-card">
+              <div class="icon">📈</div>
+              <h3>Insightful data</h3>
+              <p>Track momentum with clear reporting and decision-ready metrics.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer" id="contact">
+        <p>Ready to build something meaningful?</p>
+        <a href="mailto:hello@portal.example">hello@portal.example</a>
+      </footer>
+    </div>
+  </body>
+</html>
