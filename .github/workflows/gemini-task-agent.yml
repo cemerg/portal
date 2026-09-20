@@ -1,0 +1,39 @@
+name: Gemini AI Task Agent
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  gemini-task:
+    # Only trigger if the comment mentions @gemini-cli and is on an issue
+    if: contains(github.event.comment.body, '@gemini-cli') && github.event.issue.pull_request == null
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js (Required for Gemini CLI)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Gemini CLI Action
+        uses: google-github-actions/run-gemini-cli@main
+        with:
+          # Pass the issue content and the comment prompt to Gemini
+          prompt: |
+            You are an autonomous AI developer working on this codebase. 
+            The user left this instruction in Issue #${{ github.event.issue.number }}:
+            Title: ${{ github.event.issue.title }}
+            Body: ${{ github.event.issue.body }}
+            Comment / Instruction: ${{ github.event.comment.body }}
+            
+            Please analyze the request, write or modify the required code files, and make sure everything is clean.
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
